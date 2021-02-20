@@ -1,13 +1,38 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+:root {
+  @apply light;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/* https://color.adobe.com/create/color-wheel */
+/* https://paletton.com/#uid=31u0u0kfPw069RMb4Hik7ryo-nA */
+
+.dark {
+  --color-bg-primary: #615e4e;
+  --color-bg-secondary: #ada158;
+  --color-text-primary: #ffec81;
+  --color-text-secondary: #e6dfba;
+  --color-text-accent: #e0d072;
+}
+
+.light {
+  --color-bg-primary: #ffec81;
+  --color-bg-secondary: #e6dfba;
+  --color-bg-third: #81ecec;
+  --color-text-primary: #615e4e;
+  --color-text-secondary: #ada158;
+  --color-text-accent: #e0d072;
+}
+
+body {
+  background-color: var(--color-bg-primary);
+}
+
+/* Dark mode toggle */
+.toggle-checkbox:checked {
+  @apply: right-0 border-green-400;
+  right: 0;
+  border-color: #68d391;
+}
+.toggle-checkbox:checked + .toggle-label {
+  @apply: bg-green-400;
+  background-color: #68d391;
 }

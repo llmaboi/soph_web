@@ -1,24 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter, Route, Switch } from "react-router-dom";
+import NavBar from "./components/shared/navbar";
+import Footer from "./components/shared/footer";
+import About from "./components/about";
+import Believe from "./components/believe";
+import Education from "./components/education";
+import Home from "./components/home";
+import NotFound from "./components/404.js";
+import "./styles/tailwind.css";
+import { ThemeProvider } from "./components/shared/themeContext";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ThemeProvider>
+      <BrowserRouter>
+        <NavBar />
+        <Switch>
+          <Route component={Home} path="/" exact />
+          <Route component={About} path="/about" />
+          <Route component={Believe} path="/believe" />
+          <Route component={Education} path="/education" />
+          <Route component={NotFound} />
+        </Switch>
+      </BrowserRouter>
+      <Footer />
+    </ThemeProvider>
   );
 }
 
