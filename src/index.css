@@ -11,6 +11,9 @@
   --color-text-primary: #ffec81;
   --color-text-secondary: #e6dfba;
   --color-text-accent: #e0d072;
+  --color-text-negative: #fff;
+  --text-shadow-light: 1px 1px 4px #fff;
+  --text-shadow-dark: 1px 1px 4px #000;
 }
 
 .light {
@@ -20,6 +23,9 @@
   --color-text-primary: #615e4e;
   --color-text-secondary: #ada158;
   --color-text-accent: #e0d072;
+  --color-text-negative: #fff;
+  --text-shadow-light: 1px 1px 4px #fff;
+  --text-shadow-dark: 1px 1px 4px #000;
 }
 
 body {
@@ -35,4 +41,12 @@ body {
 .toggle-checkbox:checked + .toggle-label {
   @apply: bg-green-400;
   background-color: #68d391;
+}
+.toggle-under {
+  height: 35px;
+  width: 70px;
+}
+.toggle-circle {
+  height: 35px;
+  width: 35px;
 }

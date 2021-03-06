@@ -16,8 +16,8 @@ export default function NavBar() {
             <NavLink
               to="/"
               exact
-              className="text-4xl font-bold leading-relaxed inline-block mr-4 py-2 whitespace-no-wrap text-primary hover:text-secondary"
-              activeClassName="text-secondary"
+              activeClassName="text-primary"
+              className="text-4xl font-bold leading-relaxed inline-block mr-4 py-2 whitespace-no-wrap text-secondary hover:text-primary"
             >
               home
             </NavLink>
@@ -84,13 +84,6 @@ export default function NavBar() {
               </li>
               <li className={"nav-item" + (navbarOpen ? "" : " pl-4")}>
                 <div className="inline-flex">
-                  <SocialIcon
-                    url="mailto:sophcjake@gmail.com"
-                    className="mr-4"
-                    target="_blank"
-                    fgColor="#fff"
-                    style={{ height: 35, width: 35 }}
-                  />
                   <SocialIcon
                     url="https://linkedin.com/in/"
                     className="mr-4"

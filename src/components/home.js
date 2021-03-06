@@ -17,7 +17,7 @@ export default function Home() {
               alt="Smiling girl and a plant."
             />
             <a href="/about">
-              <h3 className="text-white text-2xl absolute bottom-1 right-1 text-right">
+              <h3 className="text-shadow-dark text-white text-2xl font-extrabold absolute bottom-1 right-1 text-right">
                 get to know me
               </h3>
             </a>
@@ -29,8 +29,8 @@ export default function Home() {
                 src={GetInTouch}
                 alt="Smiling girl and a plant."
               />
-              <a href="/about">
-                <h3 className="text-white text-2xl absolute bottom-1 right-1 text-right">
+              <a href="/contact">
+                <h3 className="text-shadow-dark text-white text-2xl font-extrabold absolute bottom-1 right-1 text-right">
                   get in touch
                 </h3>
               </a>
@@ -42,7 +42,7 @@ export default function Home() {
                 alt="Smiling girl and a plant."
               />
               <a href="/about">
-                <h3 className="text-white text-2xl absolute bottom-1 right-1 text-right">
+                <h3 className="text-shadow-dark text-white text-2xl font-extrabold absolute bottom-1 right-1 text-right">
                   resume
                 </h3>
               </a>
@@ -58,7 +58,7 @@ export default function Home() {
                 alt="Smiling girl and a plant."
               />
               <a href="/believe">
-                <h3 className="text-white text-2xl absolute bottom-1 right-1 text-right">
+                <h3 className="text-shadow-dark text-white text-2xl font-extrabold absolute bottom-1 right-1 text-right">
                   what i believe
                 </h3>
               </a>
@@ -70,8 +70,8 @@ export default function Home() {
                 alt="Smiling girl and a plant."
               />
               <a href="/about">
-                <h3 className="text-white text-2xl absolute bottom-1 right-1 text-right">
-                  contact me
+                <h3 className="text-shadow-dark text-white text-2xl font-extrabold absolute bottom-1 right-1 text-right">
+                  TODO
                 </h3>
               </a>
             </div>
@@ -82,8 +82,8 @@ export default function Home() {
               src={Photography}
               alt="Smiling girl and a plant."
             />
-            <a href="/about" title="">
-              <h3 className="text-white text-2xl absolute bottom-1 right-1 text-right">
+            <a href="/photography" title="">
+              <h3 className="text-shadow-dark text-white text-2xl font-extrabold absolute bottom-1 right-1 text-right">
                 photography
               </h3>
             </a>

@@ -8,42 +8,41 @@ function urlFor(source) {
   return builder.image(source);
 }
 
-export default function About() {
-  const [aboutDat, setAboutDat] = useState(null);
+export default function Resume() {
+  const [resumeDat, setResumeDat] = useState(null);
   useEffect(() => {
     sanityClient
       .fetch(
-        `*[_type == "pages" && title == "Get to know me"]{
+        `*[_type == "pages" && title == "What I resume"]{
           title,
           _id,
           body,
-          "aboutImg": image.asset->url,
-          imageAlt
+          "resumeImg": image.asset->url,
+          imagealt
         }`
       )
-      .then((data) => setAboutDat(data[0]))
+      .then((data) => setResumeDat(data[0]))
       .catch(console.error);
     // TODO: Handle the error here in a better way... redirect to a proper screen
   }, []);
 
-  if (!aboutDat) return <div>Loading...</div>;
+  if (!resumeDat) return <div>Loading...</div>;
 
   return (
-    <div className="grid grid-cols-1 grid-rows-1 md:grid-cols-2 gap-4 p-4">
-      <div className="text-primary">
-        <BlockContent
-          blocks={aboutDat.body}
-          projectId="fbuquty9"
-          dataset="production"
-          className="mx-0 my-auto"
-        />
-      </div>
+    <div className="grid grid-cols-1 grid-rows-1 lg:grid-cols-2 gap-4 p-4">
       <div className="aspect-w-16 aspect-h-9">
         <img
           style={{ display: "block", margin: "0 auto" }}
-          src={urlFor(aboutDat.aboutImg).url()}
+          src={urlFor(resumeDat.resumeImg).url()}
           className="lg:col-span-2 rounded"
-          alt={aboutDat.imageAlt}
+          alt="Smiling face"
+        />
+      </div>
+      <div className="text-primary">
+        <BlockContent
+          blocks={resumeDat.body}
+          projectId="fbuquty9"
+          dataset="production"
         />
       </div>
     </div>

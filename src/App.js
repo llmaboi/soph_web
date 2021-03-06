@@ -8,6 +8,7 @@ import Home from "./components/home";
 import NotFound from "./components/404.js";
 import "./styles/tailwind.css";
 import { ThemeProvider } from "./components/shared/themeContext";
+import { Photography } from "./components/photography";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
           <Route component={About} path="/about" />
           <Route component={Believe} path="/believe" />
           <Route component={Education} path="/education" />
+          <Route component={Photography} path="/photography" />
           <Route component={NotFound} />
         </Switch>
       </BrowserRouter>

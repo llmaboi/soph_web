@@ -41,9 +41,18 @@ module.exports = {
         secondary: "var(--color-text-secondary)",
       },
     },
+    textShadow: {
+      light: "var(--text-shadow-light)",
+      dark: "var(--text-shadow-dark)",
+    }
   },
   variants: {
     extend: {},
   },
-  plugins: [require("tailwindcss"), require("autoprefixer"), require('@tailwindcss/aspect-ratio')],
+  plugins: [
+    require("tailwindcss"),
+    require("autoprefixer"),
+    require('@tailwindcss/aspect-ratio'),
+    require("tailwindcss-textshadow"),
+  ],
 };
