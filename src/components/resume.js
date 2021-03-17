@@ -1,50 +1,48 @@
 import { React, useState, useEffect } from "react";
 import sanityClient from "../client.js";
-import imageUrlBuilder from "@sanity/image-url";
-import BlockContent from "@sanity/block-content-to-react";
-
-const builder = imageUrlBuilder(sanityClient);
-function urlFor(source) {
-  return builder.image(source);
-}
+import { Redirect } from "react-router-dom";
+import Skeleton from "@material-ui/lab/Skeleton";
 
 export default function Resume() {
   const [resumeDat, setResumeDat] = useState(null);
   useEffect(() => {
     sanityClient
       .fetch(
-        `*[_type == "pages" && title == "What I resume"]{
+        `*[_type == "resume"]{
           title,
           _id,
-          body,
-          "resumeImg": image.asset->url,
-          imagealt
+          resumeLink
         }`
       )
       .then((data) => setResumeDat(data[0]))
-      .catch(console.error);
-    // TODO: Handle the error here in a better way... redirect to a proper screen
+      .catch(function (error) {
+        console.log(error);
+        return <Redirect to="/400" />;
+      });
   }, []);
 
-  if (!resumeDat) return <div>Loading...</div>;
+  if (!resumeDat)
+    return (
+      <div className="p-4">
+        <div className="w-1/2 mx-auto my-0">
+          <Skeleton animation="wave" height={480} />
+        </div>
+      </div>
+    );
 
   return (
-    <div className="grid grid-cols-1 grid-rows-1 lg:grid-cols-2 gap-4 p-4">
-      <div className="aspect-w-16 aspect-h-9">
-        <img
-          style={{ display: "block", margin: "0 auto" }}
-          src={urlFor(resumeDat.resumeImg).url()}
-          className="lg:col-span-2 rounded"
-          alt="Smiling face"
-        />
-      </div>
-      <div className="text-primary">
-        <BlockContent
-          blocks={resumeDat.body}
-          projectId="fbuquty9"
-          dataset="production"
-        />
-      </div>
+    <div className="p-4">
+      <object
+        data={resumeDat.resumeLink}
+        type="application/pdf"
+        className="min-w-min w-1/2 mx-auto my-0"
+        height="520"
+      >
+        <p>
+          If your browesr was unable to load the pdf please click{" "}
+          <a href={resumeDat.resumeLink}>here</a> to view it.
+        </p>
+      </object>
     </div>
   );
 }

@@ -2,6 +2,7 @@ import { React, useState, useEffect } from "react";
 import sanityClient from "../client.js";
 import imageUrlBuilder from "@sanity/image-url";
 import BlockContent from "@sanity/block-content-to-react";
+import Skeleton from "@material-ui/lab/Skeleton";
 
 const builder = imageUrlBuilder(sanityClient);
 function urlFor(source) {
@@ -26,7 +27,13 @@ export default function About() {
     // TODO: Handle the error here in a better way... redirect to a proper screen
   }, []);
 
-  if (!aboutDat) return <div>Loading...</div>;
+  if (!aboutDat)
+    return (
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
+        <Skeleton animation="wave" height={200} className='' />
+        <Skeleton animation="wave" height={200} className='' />
+      </div>
+    );
 
   return (
     <div className="grid grid-cols-1 grid-rows-1 md:grid-cols-2 gap-4 p-4">

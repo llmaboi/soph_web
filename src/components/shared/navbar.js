@@ -85,7 +85,7 @@ export default function NavBar() {
               <li className={"nav-item" + (navbarOpen ? "" : " pl-4")}>
                 <div className="inline-flex">
                   <SocialIcon
-                    url="https://linkedin.com/in/"
+                    url="https://www.linkedin.com/in/sophie-jacobsen/"
                     className="mr-4"
                     target="_blank"
                     fgColor="#fff"

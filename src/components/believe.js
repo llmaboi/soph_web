@@ -2,6 +2,8 @@ import { React, useState, useEffect } from "react";
 import sanityClient from "../client.js";
 import imageUrlBuilder from "@sanity/image-url";
 import BlockContent from "@sanity/block-content-to-react";
+import { Redirect } from "react-router-dom";
+import Skeleton from "@material-ui/lab/Skeleton";
 
 const builder = imageUrlBuilder(sanityClient);
 function urlFor(source) {
@@ -22,11 +24,19 @@ export default function Believe() {
         }`
       )
       .then((data) => setBelieveDat(data[0]))
-      .catch(console.error);
-    // TODO: Handle the error here in a better way... redirect to a proper screen
+      .catch(function (err) {
+        console.log(err);
+        return <Redirect to="/400" />;
+      });
   }, []);
 
-  if (!believeDat) return <div>Loading...</div>;
+  if (!believeDat)
+    return (
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
+        <Skeleton animation="wave" height={200} />
+        <Skeleton animation="wave" height={200} />
+      </div>
+    );
 
   return (
     <div className="grid grid-cols-1 grid-rows-1 lg:grid-cols-2 gap-4 p-4">

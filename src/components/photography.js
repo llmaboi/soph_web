@@ -1,14 +1,12 @@
 import { React, useState, useEffect } from "react";
 import sanityClient from "../client.js";
-import { makeStyles } from "@material-ui/core/styles";
 import Skeleton from "@material-ui/lab/Skeleton";
+import { Redirect } from "react-router-dom";
 
 export const Photography = () => {
-  var loading = false;
   const [photographyDat, setPhotographyDat] = useState(null);
 
   useEffect(() => {
-    loading = true;
     sanityClient
       .fetch(
         `*[_type == "photography" ] | order(imageOrderNum) {
@@ -21,13 +19,12 @@ export const Photography = () => {
       )
       .then((data) => {
         setPhotographyDat(data);
-        loading = false;
       })
-      .catch(console.error);
-    // TODO: Handle the error here in a better way... redirect to a proper screen
+      .catch(function (error) {
+        console.log(error);
+        return <Redirect to="/400" />;
+      });
   }, []);
-
-  // if (!photographyDat) return <div>Loading...</div>;
 
   return (
     <div className="container mx-auto sm:p-4">
@@ -46,13 +43,12 @@ export const Photography = () => {
         </div>
       ) : (
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
-          {photographyDat &&
-            photographyDat.map((image, index) => (
-              <div className="aspect-w-16 aspect-h-9" key={index}>
-                <img src={image.photographyImg} alt={image.imageAlt} />
-              </div>
-          // <ImageCard key={index} image={image} />
-            ))}
+          {photographyDat.map((image, index) => (
+            <div className="aspect-w-16 aspect-h-9" key={index}>
+              <img src={image.photographyImg} alt={image.imageAlt} />
+            </div>
+            // <ImageCard key={index} image={image} />
+          ))}
         </div>
       )}
     </div>

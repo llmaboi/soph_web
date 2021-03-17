@@ -8,8 +8,10 @@
 .dark {
   --color-bg-primary: #615e4e;
   --color-bg-secondary: #ada158;
+  --color-bg-accent: #8d844a;
   --color-text-primary: #ffec81;
   --color-text-secondary: #e6dfba;
+  --color-text-opposite: #494840;
   --color-text-accent: #e0d072;
   --color-text-negative: #fff;
   --text-shadow-light: 1px 1px 4px #fff;
@@ -19,9 +21,11 @@
 .light {
   --color-bg-primary: #ffec81;
   --color-bg-secondary: #e6dfba;
+  --color-bg-accent: #faf0bc;
   --color-bg-third: #81ecec;
   --color-text-primary: #615e4e;
   --color-text-secondary: #ada158;
+  --color-text-opposite: #ada158;
   --color-text-accent: #e0d072;
   --color-text-negative: #fff;
   --text-shadow-light: 1px 1px 4px #fff;
