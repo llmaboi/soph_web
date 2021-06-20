@@ -1,11 +1,11 @@
-import React from "react";
-import { ThemeContext } from "./themeContext";
+import React from 'react';
+import { ThemeContext } from './themeContext';
 
 export const Toggle = () => {
   const { theme, setTheme } = React.useContext(ThemeContext);
 
   function isDark() {
-    return theme === "dark";
+    return theme === 'dark';
   }
 
   return (
@@ -17,7 +17,7 @@ export const Toggle = () => {
           id="darkToggle"
           className="toggle-circle block toggle-checkbox absolute rounded-full bg-gray-200 border-4 appearance-none cursor-pointer"
           checked={isDark()}
-          onChange={(e) => setTheme(e.target.checked ? "dark" : "light")}
+          onChange={(e) => setTheme(e.target.checked ? 'dark' : 'light')}
         ></input>
         <label
           htmlFor="darkToggle"

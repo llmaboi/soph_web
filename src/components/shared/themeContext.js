@@ -1,20 +1,20 @@
-import React from "react";
+import React from 'react';
 
 const getInitialTheme = (_) => {
-  if (typeof window !== "undefined" && window.localStorage) {
-    const storedPrefs = window.localStorage.getItem("color-theme");
-    if (typeof storedPrefs === "string") {
+  if (typeof window !== 'undefined' && window.localStorage) {
+    const storedPrefs = window.localStorage.getItem('color-theme');
+    if (typeof storedPrefs === 'string') {
       return storedPrefs;
     }
 
-    const userMedia = window.matchMedia("(prefers-color-scheme: dark)");
+    const userMedia = window.matchMedia('(prefers-color-scheme: dark)');
     if (userMedia.matches) {
-      return "dark";
+      return 'dark';
     }
   }
 
   // If you want to use light theme as the default, return "light" instead
-  return "light";
+  return 'light';
 };
 
 export const ThemeContext = React.createContext();
@@ -24,12 +24,12 @@ export const ThemeProvider = ({ initialTheme, children }) => {
 
   const rawSetTheme = (theme) => {
     const root = window.document.documentElement;
-    const isDark = theme === "dark";
+    const isDark = theme === 'dark';
 
-    root.classList.remove(isDark ? "light" : "dark");
+    root.classList.remove(isDark ? 'light' : 'dark');
     root.classList.add(theme);
 
-    localStorage.setItem("color-theme", theme);
+    localStorage.setItem('color-theme', theme);
   };
 
   if (initialTheme) {

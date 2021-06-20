@@ -1,8 +1,8 @@
-import { React, useState, useEffect } from "react";
-import sanityClient from "../client.js";
-import imageUrlBuilder from "@sanity/image-url";
-import BlockContent from "@sanity/block-content-to-react";
-import Skeleton from "@material-ui/lab/Skeleton";
+import { React, useState, useEffect } from 'react';
+import sanityClient from '../client.js';
+import imageUrlBuilder from '@sanity/image-url';
+import BlockContent from '@sanity/block-content-to-react';
+import Skeleton from '@material-ui/lab/Skeleton';
 
 const builder = imageUrlBuilder(sanityClient);
 function urlFor(source) {
@@ -30,8 +30,8 @@ export default function About() {
   if (!aboutDat)
     return (
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
-        <Skeleton animation="wave" height={200} className='' />
-        <Skeleton animation="wave" height={200} className='' />
+        <Skeleton animation="wave" height={200} className="" />
+        <Skeleton animation="wave" height={200} className="" />
       </div>
     );
 
@@ -47,7 +47,7 @@ export default function About() {
       </div>
       <div className="aspect-w-16 aspect-h-9">
         <img
-          style={{ display: "block", margin: "0 auto" }}
+          style={{ display: 'block', margin: '0 auto' }}
           src={urlFor(aboutDat.aboutImg).url()}
           className="lg:col-span-2 rounded"
           alt={aboutDat.imageAlt}

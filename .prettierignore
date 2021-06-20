@@ -1,0 +1,7 @@
+# Ingore artifacts:
+build
+coverage
+funcitons
+.firebase
+node_modules
+public

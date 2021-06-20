@@ -1,7 +1,7 @@
-import { React, useState, useEffect } from "react";
-import sanityClient from "../client.js";
-import { Redirect } from "react-router-dom";
-import Skeleton from "@material-ui/lab/Skeleton";
+import { React, useState, useEffect } from 'react';
+import sanityClient from '../client.js';
+import { Redirect } from 'react-router-dom';
+import Skeleton from '@material-ui/lab/Skeleton';
 
 export default function Resume() {
   const [resumeDat, setResumeDat] = useState(null);
@@ -39,7 +39,7 @@ export default function Resume() {
         height="520"
       >
         <p>
-          If your browesr was unable to load the pdf please click{" "}
+          If your browesr was unable to load the pdf please click{' '}
           <a href={resumeDat.resumeLink}>here</a> to view it.
         </p>
       </object>

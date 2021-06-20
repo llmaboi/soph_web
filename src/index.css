@@ -54,3 +54,23 @@ body {
   height: 35px;
   width: 35px;
 }
+
+.text-primary ul {
+  list-style: disc;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  padding-inline-start: 40px;
+}
+
+span.error {
+  color: red;
+  font-style: italic;
+  padding-left: 4px;
+  font-size: .8em;
+}
+
+input.error {
+  border: solid 2px red;
+}

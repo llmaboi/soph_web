@@ -1,9 +1,9 @@
-import React from "react";
-import { NavLink } from "react-router-dom";
-import { SocialIcon } from "react-social-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBars } from "@fortawesome/free-solid-svg-icons";
-import { Toggle } from "./toggle";
+import React from 'react';
+import { NavLink } from 'react-router-dom';
+import { SocialIcon } from 'react-social-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBars } from '@fortawesome/free-solid-svg-icons';
+import { Toggle } from './toggle';
 
 export default function NavBar() {
   const [navbarOpen, setNavbarOpen] = React.useState(false);
@@ -31,8 +31,8 @@ export default function NavBar() {
           </div>
           <div
             className={
-              "lg:flex flex-grow items-center" +
-              (navbarOpen ? " flex" : " hidden")
+              'lg:flex flex-grow items-center' +
+              (navbarOpen ? ' flex' : ' hidden')
             }
           >
             <ul className="flex flex-col lg:flex-row list-none lg:ml-auto gap-3">
@@ -82,7 +82,7 @@ export default function NavBar() {
                   get in touch
                 </NavLink>
               </li>
-              <li className={"nav-item" + (navbarOpen ? "" : " pl-4")}>
+              <li className={'nav-item' + (navbarOpen ? '' : ' pl-4')}>
                 <div className="inline-flex">
                   <SocialIcon
                     url="https://www.linkedin.com/in/sophie-jacobsen/"

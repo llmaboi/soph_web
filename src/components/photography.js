@@ -1,7 +1,7 @@
-import { React, useState, useEffect } from "react";
-import sanityClient from "../client.js";
-import Skeleton from "@material-ui/lab/Skeleton";
-import { Redirect } from "react-router-dom";
+import { React, useState, useEffect } from 'react';
+import sanityClient from '../client.js';
+import Skeleton from '@material-ui/lab/Skeleton';
+import { Redirect } from 'react-router-dom';
 
 export const Photography = () => {
   const [photographyDat, setPhotographyDat] = useState(null);
@@ -32,7 +32,7 @@ export const Photography = () => {
         {!photographyDat ? (
           <Skeleton animation="wave" height={80} />
         ) : (
-          "Here is a sample of some of my work!"
+          'Here is a sample of some of my work!'
         )}
       </h3>
       {!photographyDat ? (
