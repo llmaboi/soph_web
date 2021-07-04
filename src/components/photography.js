@@ -47,7 +47,7 @@ export default class Photography extends React.Component {
           {!photographyDat ? (
             <Skeleton animation="wave" height={80} />
           ) : (
-            'Here is a sample of some of my work!' + photographyDat.length
+            'Here is a sample of some of my work!'
           )}
         </h3>
         {!photographyDat ? (
