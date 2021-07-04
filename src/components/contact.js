@@ -215,7 +215,7 @@ class Contact extends React.Component {
             className="contact-form"
             onSubmit={this.handleSubmit}
           >
-            <input type="hidden" name="contact_number" id="contact_number" />
+            <input type="hidden" name="contact_number" value={contact_number} id="contact_number" />
             <div className="overflow-hidden">
               <div className="px-4 py-5 sm:p-6">
                 <div className="grid grid-cols-6 gap-6">

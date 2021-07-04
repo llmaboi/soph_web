@@ -10,7 +10,7 @@ import NotFound from './components/404.js';
 import NoData from './components/400.js';
 import './styles/tailwind.css';
 import { ThemeProvider } from './components/shared/themeContext';
-import { Photography } from './components/photography';
+import Photography from './components/photography';
 import Resume from './components/resume';
 import Contact from './components/contact';
 
